@@ -1,7 +1,8 @@
 name: Run Python Script
 
 on:
-  pull_request [ main ]
+  pull_request:
+  branches: [ main ]
 
 jobs:
   run-script:
