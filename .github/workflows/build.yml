@@ -1,5 +1,5 @@
 
-name: Build Jave Code
+name: Build Jave test
 
 on:
   pull_request:
