@@ -1,4 +1,4 @@
-name: Build Java Test
+name: Build Java setup
 
 on:
   pull_request:
