@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     if: |
         (github.event_name == 'pull_request' && 
-         github.event.pull_request.base.ref == 'main')
+         github.event.pull_request.base.ref == 'main' && github.head_ref == 'test/feature')
 
     steps:
       - name: Checkout code
