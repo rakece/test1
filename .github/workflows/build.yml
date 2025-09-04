@@ -1,4 +1,4 @@
-name: Run Jave Code
+name: Build Jave Code
 
 on:
   pull_request:
