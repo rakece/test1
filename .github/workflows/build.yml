@@ -1,7 +1,7 @@
 name: Build Java new setup
 
 on:
-  pull_request:
+  push:
     branches:
       - main
 
@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     if: |
         (github.event_name == 'pull_request' && 
-         github.event.pull_request.base.ref == 'main' && github.head_ref == 'test/feature')
+         github.event.pull_request.base.ref == 'main' && github.head_ref == 'test')
 
     steps:
       - name: Checkout code
