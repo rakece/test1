@@ -1,20 +1,27 @@
-name: Run Python Script
+
+name: Build Jave test
 
 on:
   pull_request:
-    branches: [ main ]
+    branches: [ master ]
 
 jobs:
-  run-script:
+  build:
     runs-on: ubuntu-latest
+   
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Set up Python
-        uses: actions/setup-python@v5
+      - name: Set up JDK17
+        uses: actions/setup-java@v3
         with:
-          python-version: '3.x'
+          java-version: '17'
+          distribution: 'temurin'
 
-      - name: Run script
-        run: python main.py
+      - name: Build with maven
+        run: mvn -B package --file pom.xml
+
+      - name: Run tests
+        run: mvn test
+
