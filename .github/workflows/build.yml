@@ -1,4 +1,4 @@
-name: Build Java setup
+name: Build Java new setup
 
 on:
   pull_request:
@@ -8,10 +8,11 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    if: github.ref == 'refs/heads/main' || 
-        (github.event_name == 'pull_request' && 
-         github.event.pull_request.base.ref == 'main' && 
-         startsWith(github.head_ref, 'test/'))
+    if: |
+      (github.event_name == 'push' && github.ref == 'refs/heads/main') ||
+      (github.event_name == 'pull_request' &&
+       github.base_ref == 'main' &&
+       startsWith(github.head_ref, 'test/'))
 
     steps:
       - name: Checkout code
