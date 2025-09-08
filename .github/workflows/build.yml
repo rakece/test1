@@ -1,4 +1,4 @@
-name: Build Java new setup
+name: Build Java with secrets
 
 on:
   pull_request:
