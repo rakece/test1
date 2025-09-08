@@ -27,3 +27,5 @@ jobs:
 
       - name: Run tests
         run: mvn test
+        env:
+          MY_SECRET_KEY: ${{ secrets.SECRET_NAME }}
