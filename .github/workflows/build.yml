@@ -1,4 +1,4 @@
-name: Build Java new setup
+name: Build Java with secrets
 
 on:
   pull_request:
@@ -27,3 +27,5 @@ jobs:
 
       - name: Run tests
         run: mvn test
+        env:
+          MY_SECRET_KEY: ${{ secrets.SECRET_NAME }}
